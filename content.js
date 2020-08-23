@@ -28,7 +28,7 @@ function initOtherActivityCarousel() {
   var list = $('#other-activity');
   var news = NEWS.reverse();
   news.forEach(function (n) {
-    var img = `./assets/activities/${n}/logo.png`;
+    var img = `./assets/activities/${n.activities}/logo.png`;
     var card = $('<div>')
       .addClass('thumbnail our-team');
     $('<img>').attr('src', img).attr('alt', 'test').appendTo(card);
