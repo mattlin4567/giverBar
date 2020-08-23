@@ -130,7 +130,7 @@ div.tiles:hover .details {
 }
 
 #other-activity .owl-item > div > img {
-  max-height: 200px;
+  max-height: 180px;
 }
 
 #other-activity .owl-nav > button::after {

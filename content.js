@@ -26,7 +26,7 @@ function initImagesCarousel(id, num) {
 
 function initOtherActivityCarousel() {
   var list = $('#other-activity');
-  var news = NEWS.reverse();
+  var news = NEWS;
   news.forEach(function (n) {
     var img = `./assets/activities/${n.activities}/logo.png`;
     var card = $('<div>')
