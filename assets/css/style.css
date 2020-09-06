@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 html {
   font-family: 微軟正黑體, 'Arial Unicode MS';
 }
@@ -70,12 +74,34 @@ html {
   color: #555555;
 }
 
+/* 背景動畫 */
+
+.bg {
+  background: linear-gradient(-45deg, rgba(238,119,82,.5) 0%, rgba(231,60,126,.5) 33%, rgba(35,166,213,.5) 66%, rgba(35,213,171,.5) 100%);
+  background-size: 400% 400%;
+  animation: bgAnimation 10s ease-in-out infinite;
+}
+
+@keyframes bgAnimation {
+  from {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+
 /* banner 動畫 */
 
 .stage {
   display: flex;
   justify-content: center;
   height: 25vh;
+  margin: 16px auto;
 }
 
 .stage > img {
