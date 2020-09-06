@@ -78,6 +78,10 @@ body {
   padding-left: 18px;
 } 
 
+.social-bar {
+  text-align: center;
+}
+
 .social-bar > a {
   text-decoration: none;
 }
@@ -85,9 +89,23 @@ body {
 /* 背景動畫 */
 
 .bg {
-  background: linear-gradient(-45deg, rgba(238,119,82,.5) 0%, rgba(231,60,126,.5) 33%, rgba(35,166,213,.5) 66%, rgba(35,213,171,.5) 100%);
+  position: relative;
+}
+
+.bg::after {
+  content: "";
+  background-image: url("../images/background.png");
+  background-repeat: repeat;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+  /* background: background: linear-gradient(-45deg, rgba(224,222,223,1) 0%, rgba(148,187,233,1) 100%);
   background-size: 400% 400%;
-  animation: bgAnimation 10s ease-in-out infinite;
+  animation: bgAnimation 10s ease-in-out infinite; */
 }
 
 @keyframes bgAnimation {
