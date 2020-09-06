@@ -74,6 +74,18 @@ html {
   color: #555555;
 }
 
+.social-bar > *:first-child {
+  padding-right: 18px;
+}
+
+.social-bar > *:last-child {
+  padding-left: 18px;
+} 
+
+.social-bar > a {
+  text-decoration: none;
+}
+
 /* 背景動畫 */
 
 .bg {

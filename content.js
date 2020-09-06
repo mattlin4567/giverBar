@@ -56,7 +56,6 @@ function initOtherActivityCarousel() {
 }
 
 function initContent(d) {
-  console.info(d)
   $(".sub").text(d.title.sub);
   $(".main").text(d.title.main);
   $(".summary").text(d.content.summary);
@@ -72,18 +71,46 @@ function getId() {
   return results !== null ? results[1] || 0 : false;
 }
 
+function addOpenGraphtags(id, d) {
+  var head = $("head");
+  $('<meta>')
+    .attr("property", "og:url")
+    .attr("content", `https://${document.domain}/content.html?id=${id}`)
+    .appendTo(head);
+  $('<meta>')
+    .attr("property", "og:title")
+    .attr("content", `https://${document.domain}/content.html?id=${id}`)
+    .appendTo(head);  
+}
+
+function addSocialButton(id) {
+  var link = `https://${document.domain}/content.html?id=${id}`;
+  $('.fb-share-button').attr("data-href", link);
+  $('.line-it-button').attr("data-url", link);
+}
+
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     videoId: youtube,
   });
 }
 
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
 $(document).ready(function () {
   var id = getId();
+  console.info(document.domain)
   $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
     var imageNum = json['images'] ? json['images'] : 3;
     youtube = json.youtube;
     initImagesCarousel(id, imageNum);
+    addSocialButton(id);
     initContent(json);
     initOtherActivityCarousel();
   });
