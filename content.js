@@ -13,6 +13,8 @@ function initImagesCarousel(id, num) {
   list.owlCarousel({
     center: true,
     items: 3,
+    nav: true,
+    navText: ['<i class="fa fa-caret-left fa-2x"></i>', '<i class="fa fa-caret-right fa-2x"></i>'],
     loop: true,
     dots: false,
   });
