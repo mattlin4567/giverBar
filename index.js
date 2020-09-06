@@ -106,3 +106,10 @@ function navgation() {
 $(document).ready(function () {
   initPage();
 });
+
+$(window).on('load', function() {
+  $(".stage > img").delay(1000).css({"animation-name": "rubberBand" });
+  setTimeout(function(){ 
+    $(".stage > img").delay(1000).css({"animation-name": '' });
+  }, 2000);
+});
