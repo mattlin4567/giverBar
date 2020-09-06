@@ -84,7 +84,7 @@ function addOpenGraphtags(id, d) {
 }
 
 function addSocialButton(id) {
-  var link = `https://${document.domain}/content.html?id=${id}`;
+  var link = `https://${document.domain}/giverBar/content.html?id=${id}`;
   $('.fb-share-button').attr("data-href", link);
   $('.line-it-button').attr("data-url", link);
 }
