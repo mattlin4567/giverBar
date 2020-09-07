@@ -87,7 +87,7 @@ body {
 }
 
 .section {
-  background: linear-gradient(45deg, rgba(224,222,223,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: #e8ebee;
 }
 
 /* 背景動畫 */
@@ -101,7 +101,7 @@ body {
   background-image: url("../images/background.png");
   background-repeat: repeat;
   opacity: 0.1;
-  top: 0;
+  top: 20vh;
   left: 0;
   bottom: 0;
   right: 0;

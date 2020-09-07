@@ -11,7 +11,7 @@ function createMobileList(data, year) {
 }
 
 function initPage() {
-  var news = NEWS;
+  var news = NEWS.reverse();
   console.info(news)
   var list = $('#activity-list');
   var newsNum = news.length;
