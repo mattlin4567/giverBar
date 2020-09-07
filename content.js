@@ -1,5 +1,6 @@
 var youtube;
 function initImagesCarousel(id, num) {
+  console.info(num)
   var list = $('#image-carousel');
   for (var i = 0; i < num; i++) {
     var img = `./assets/activities/${id}/image${i}.jpg`;
@@ -21,9 +22,9 @@ function initImagesCarousel(id, num) {
   $('.owl-item>div').click(function() {
     // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
     var $speed = 300;  // in ms
-    console.info($(this).data('position'))
     $('#image-carousel').trigger('to.owl.carousel', [$(this).data('position'), $speed] );
   });
+  $('#image-carousel .owl-nav').removeClass('disabled');
 }
 
 function initOtherActivityCarousel() {
@@ -85,16 +86,18 @@ function addOpenGraphtags(id, d) {
     .appendTo(head);  
 }
 
-function addSocialButton(id) {
-  var link = `https://${document.domain}/giverBar/content.html?id=${id}`;
-  $('.fb-share-button').attr("data-href", link);
-  $('.line-it-button').attr("data-url", link);
+function addSocialButton(url) {
+  $(".social-bar > a").attr("href", url);
+  $('.fb-share-button').attr("data-href", document.URL);
+  $('.line-it-button').attr("data-url", document.URL);
 }
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: youtube,
-  });
+  if (youtube) {
+    player = new YT.Player('player', {
+      videoId: youtube,
+    });
+  } 
 }
 
 (function(d, s, id) {
@@ -107,12 +110,11 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
   var id = getId();
-  console.info(document.domain)
   $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
-    var imageNum = json['images'] ? json['images'] : 3;
+    var imageNum = json.images ? json.images : 3;
     youtube = json.youtube;
     initImagesCarousel(id, imageNum);
-    addSocialButton(id);
+    addSocialButton(id, json.web);
     initContent(json);
     initOtherActivityCarousel();
   });

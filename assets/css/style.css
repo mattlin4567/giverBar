@@ -221,7 +221,7 @@ div.tiles:hover .details {
 
 #image-carousel .owl-item > div > img {
   border-radius: 3px;
-  max-height: 250px;
+  max-height: 210px;
 }
 
 #other-activity .owl-nav {
