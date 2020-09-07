@@ -114,7 +114,7 @@ $(document).ready(function () {
     var imageNum = json.images ? json.images : 3;
     youtube = json.youtube;
     initImagesCarousel(id, imageNum);
-    addSocialButton(id, json.web);
+    addSocialButton(json.web);
     initContent(json);
     initOtherActivityCarousel();
   });
