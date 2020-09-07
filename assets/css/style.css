@@ -86,6 +86,10 @@ body {
   text-decoration: none;
 }
 
+.section {
+  background: linear-gradient(45deg, rgba(224,222,223,1) 0%, rgba(148,187,233,1) 100%);
+}
+
 /* 背景動畫 */
 
 .bg {
