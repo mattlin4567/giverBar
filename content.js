@@ -22,8 +22,7 @@ function initImagesCarousel(id, num) {
     // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
     var $speed = 300;  // in ms
     $('#image-carousel').trigger('to.owl.carousel', [$(this).data('position'), $speed] );
-  });
-  $('#image-carousel .owl-nav').removeClass('disabled');
+  })
 }
 
 function initOtherActivityCarousel() {

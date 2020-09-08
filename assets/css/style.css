@@ -1,5 +1,10 @@
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Helvetica, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Microsoft Yahei", sans-serif;
 }
 
 .activities {
@@ -207,6 +212,10 @@ div.tiles:hover .details {
 
 
 /* 覆寫 owl-carousel */
+.owl-carousel .owl-nav.disabled {
+  display: block !important;
+}
+
 #image-carousel .owl-item:not(.center) {
   transform: scale(0.9);
 }
