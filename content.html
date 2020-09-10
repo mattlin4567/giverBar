@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha512-4uGZHpbDliNxiAv/QzZNo/yb2FtAX+qiDb7ypBWiEdJQX8Pugp8M6il5SRkN8jQrDLWsh3rrPDSXRf3DwFYM6g==" crossorigin="anonymous" />
 
     <!------->
-    <script language="javascript" type="text/javascript" src="content.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/activity_list.js"></script>
     <script language="javascript" type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+    <script language="javascript" type="text/javascript" src="assets/activity_list.js"></script>
     <script language="javascript" type="text/javascript" src="assets/lib/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+    <script language="javascript" type="text/javascript" src="content.js" defer></script>
 
     <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
     <link rel="stylesheet" type="text/css" href="assets/lib/OwlCarousel2-2.3.4/owl.carousel.min.css" />
@@ -46,6 +46,10 @@
           </div>
         </div>
         <div class="social-bar">
+          <a onclick="window.history.back()" style="cursor: pointer">
+            <img height="50" src="./assets/images/banner.png" alt="回到上一頁" title="回到上一頁">
+          </a>
+          <i class="fa fa-times fa-2x"></i>
           <a class="share-btn">
             <img width="50" height="50" style="border-radius: 50px">
           </a>

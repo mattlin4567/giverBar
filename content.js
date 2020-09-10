@@ -1,4 +1,4 @@
-var youtube = false;
+var id = 0;
 function initImagesCarousel(id, num) {
   var list = $('#image-carousel');
   for (var i = 0; i < num; i++) {
@@ -31,7 +31,8 @@ function initOtherActivityCarousel() {
   news.forEach(function (n) {
     var img = `./assets/activities/${n.activities}/logo.png`;
     var card = $('<div>')
-      .addClass('thumbnail our-team');
+      .addClass('thumbnail our-team')
+      .attr('data-id', n.activities);
     $('<img>').attr('src', img).attr('alt', 'test').appendTo(card);
     list.append(card);
   });
@@ -53,6 +54,11 @@ function initOtherActivityCarousel() {
         items: 5,
       },
     },
+  });
+  
+  $('div.thumbnail').click(function () {
+    var i = $(this).attr('data-id');
+    window.location = `./content.html?id=${i}`;
   });
 }
 
@@ -89,7 +95,18 @@ function addSocialButton(url) {
 }
 
 function onYouTubeIframeAPIReady() {
-  youtube = true;
+  $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
+    var imageNum = json.images ? json.images : 3; 
+    initImagesCarousel(id, imageNum);
+    addSocialButton(json.web);
+    initContent(json);
+    initOtherActivityCarousel();
+    if (json.youtube) {
+      player = new YT.Player('player', {
+        videoId: json.youtube,
+      });
+    } 
+  });
 }
 
 (function(d, s, id) {
@@ -101,18 +118,7 @@ function onYouTubeIframeAPIReady() {
   }(document, 'script', 'facebook-jssdk'));
 
 $(document).ready(function () {
-  var id = getId();
+  id = getId();
   $('.share-btn > img').attr("src", `./assets/activities/${id}/logo.png`);
-  $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
-    var imageNum = json.images ? json.images : 3; 
-    initImagesCarousel(id, imageNum);
-    addSocialButton(json.web);
-    initContent(json);
-    initOtherActivityCarousel();
-    if (youtube&&json.youtube) {
-      player = new YT.Player('player', {
-        videoId: json.youtube,
-      });
-    } 
-  });
+  
 });

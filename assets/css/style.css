@@ -75,16 +75,16 @@ html {
   color: #555555;
 }
 
-.social-bar > *:first-child {
-  padding-right: 18px;
+.social-bar > * {
+  padding: 0 9px;
 }
 
-.social-bar > *:last-child {
-  padding-left: 18px;
-} 
 
 .social-bar {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-bar > a {
@@ -99,6 +99,7 @@ html {
 
 .bg {
   position: relative;
+  height: 100%;
 }
 
 .bg::after {
@@ -106,7 +107,7 @@ html {
   background-image: url("../images/background.png");
   background-repeat: repeat;
   opacity: 0.1;
-  top: 20vh;
+  top: 15vh;
   left: 0;
   bottom: 0;
   right: 0;
