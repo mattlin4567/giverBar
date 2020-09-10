@@ -142,7 +142,12 @@ html {
 .stage > img {
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; 
+ 	image-rendering: -moz-crisp-edges; 
+ 	image-rendering: -o-crisp-edges;    
+ 	image-rendering: -webkit-optimize-contrast; 
+ 	image-rendering: optimize-contrast;     
+ 	-ms-interpolation-mode: nearest-neighbor;
 }
 
 .stage > img:hover {
@@ -189,7 +194,6 @@ html {
 div.tiles .details {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   justify-content: center;
 	width: 100%;
 	min-height: 50%;	
@@ -235,7 +239,7 @@ div.tiles:hover .details {
 
 #other-activity .owl-nav {
   position: absolute;
-  top: -70px;
+  top: -80px;
   right: 0;
 }
 

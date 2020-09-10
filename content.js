@@ -57,9 +57,7 @@ function initOtherActivityCarousel() {
 }
 
 function initContent(d) {
-  $(".sub").text(d.title.sub);
   $(".main").text(d.title.main);
-  $(".summary").text(d.content.summary);
   var body = $(".content-body");
   for(var i=0; i<d.content.paragraph.length; i++){
     var paragraph = $("<div>").addClass("paragraph").appendTo(body);
@@ -85,8 +83,8 @@ function addOpenGraphtags(id, d) {
 }
 
 function addSocialButton(url) {
-  $(".social-bar > a").attr("href", url);
-  $('.fb-share-button').attr("data-href", document.URL);
+  $('.share-btn').attr("href", url);
+  $('.fb-share-btn').attr("href", `https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${encodeURIComponent(document.URL)}&display=popup&ref=plugin&src=share_button`);
   $('.line-it-button').attr("data-url", document.URL);
 }
 
@@ -104,8 +102,9 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
   var id = getId();
+  $('.share-btn > img').attr("src", `./assets/activities/${id}/logo.png`);
   $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
-    var imageNum = json.images ? json.images : 3;
+    var imageNum = json.images ? json.images : 3; 
     initImagesCarousel(id, imageNum);
     addSocialButton(json.web);
     initContent(json);
