@@ -95,6 +95,7 @@ function addSocialButton(url) {
 }
 
 function onYouTubeIframeAPIReady() {
+  console.info("youtube ready")
   $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
     var imageNum = json.images ? json.images : 3; 
     initImagesCarousel(id, imageNum);
