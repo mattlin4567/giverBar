@@ -18,7 +18,7 @@ function initPage() {
   var pageNum = Math.ceil(newsNum / 12);
   for(var p = 0; p < pageNum; p++){
     var page = $('<div>').attr("id", `page-${p}`).appendTo(list);
-    var row = $('<div>').addClass('row form-group hidden-xs');
+    var row = $('<div>').addClass('row form-group');
     var limit = newsNum-((p+1)*12) > 0 ? 12 : newsNum-(p*12);    
     var count = 0;
     while(count < limit){
@@ -26,8 +26,7 @@ function initPage() {
       var col = $('<div>').addClass('span3 tiles').attr("data-activity", news[index].activities).appendTo(row);
       col.append(createCards(news[index].activities));
       var details = $('<div>').addClass('details').appendTo(col);
-      $('<span>').text(news[index].date).appendTo(details);
-      $('<p>').text(news[index].title).appendTo(details);
+      $('<h3>').text(news[index].title).appendTo(details);
       count++;
     }
     page.append(row);
@@ -104,6 +103,11 @@ function navgation() {
 }
 
 $(document).ready(function () {
+  var md = new MobileDetect(window.navigator.userAgent);
+  if(md.mobile()){
+    var banner = $('#banner');
+    banner.height(Math.floor(banner.width()/4.37));
+  }
   initPage();
 });
 

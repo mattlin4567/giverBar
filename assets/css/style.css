@@ -149,6 +149,7 @@ html {
  	image-rendering: -webkit-optimize-contrast; 
  	image-rendering: optimize-contrast;     
  	-ms-interpolation-mode: nearest-neighbor;
+  width: 80%;
 }
 
 .stage > img:hover {
@@ -197,15 +198,15 @@ div.tiles .details {
   flex-direction: column;
   justify-content: center;
 	width: 100%;
-	min-height: 50%;	
-	padding: 5% 8%;
+	height: 100%;	
+  color: rgb(255,255,255);
 	position: absolute;
 	content: "";
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotateY(90deg);
 	transform-origin: 50%;
-	background: rgba(255,255,255,0.9);	
+	background: rgba(32, 37, 105, .8);	
 	opacity: 0;
 	transition: all 0.4s ease-in;
 	
@@ -293,6 +294,53 @@ div.tiles:hover .details {
 }
 
 @media only screen and (max-width: 768px) {
+  .hidden-xs {
+    display: none;
+  }
+
+  .stage, .bg {
+    height: unset;
+  }
+
+  .stage > img {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bg::after {
+    top: 0;
+  }
+
+  #image-carousel .owl-item > div {
+    padding: 0 8px;
+  }
+
+  .video {
+    position: relative !important;
+    padding-bottom: 56.25% !important;
+    height: 0;
+  } 
+
+  .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  #other-activity .owl-item > div > img {
+    max-height: unset;
+  }
 }
 
 @media only screen and (max-width: 992px) {

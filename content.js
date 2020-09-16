@@ -1,5 +1,6 @@
 var id = 0;
 function initImagesCarousel(id, num) {
+  var md = new MobileDetect(window.navigator.userAgent);
   var list = $('#image-carousel');
   for (var i = 0; i < num; i++) {
     var img = `./assets/activities/${id}/image${i}.jpg`;
@@ -12,7 +13,7 @@ function initImagesCarousel(id, num) {
   });
   list.owlCarousel({
     center: true,
-    items: 3,
+    items: md.mobile() ? 1 : 3,
     nav: true,
     navText: ['<i class="fa fa-caret-left fa-2x"></i>', '<i class="fa fa-caret-right fa-2x"></i>'],
     loop: true,
