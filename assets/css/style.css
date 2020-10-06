@@ -19,6 +19,8 @@ html {
   position: relative;
   cursor: pointer;
   margin-bottom: 20px;
+  padding: 0;
+  border: none;
 }
 
 .tiles > img {
@@ -193,7 +195,7 @@ html {
 
 /* hover 效果 */
 
-div.tiles .details {
+button.tiles .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,7 +213,7 @@ div.tiles .details {
 	transition: all 0.4s ease-in;
 	
 }
-div.tiles:hover .details {
+button.tiles:hover .details {
 	transform: translate(-50%, -50%) rotateY(0deg);
 	opacity: 1;
 }

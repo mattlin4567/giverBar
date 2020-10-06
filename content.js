@@ -5,7 +5,7 @@ function initImagesCarousel(id, num) {
   for (var i = 0; i < num; i++) {
     var img = `./assets/activities/${id}/image${i}.jpg`;
     var card = $('<div>');
-    $('<img>').attr('src', img).attr('alt', 'test').appendTo(card);
+    $('<img>').attr('src', img).attr('alt',  `圖片${i}`).appendTo(card);
     list.append(card);
   };
   list.children().each( function( index ) {
@@ -31,10 +31,10 @@ function initOtherActivityCarousel() {
   var news = NEWS;
   news.forEach(function (n) {
     var img = `./assets/activities/${n.activities}/logo.png`;
-    var card = $('<div>')
+    var card = $('<button>')
       .addClass('thumbnail our-team')
       .attr('data-id', n.activities);
-    $('<img>').attr('src', img).attr('alt', 'test').appendTo(card);
+    $('<img>').attr('src', img).attr('alt', n.title).appendTo(card);
     list.append(card);
   });
   list.owlCarousel({

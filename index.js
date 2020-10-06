@@ -1,13 +1,7 @@
-function createCards(name) {
+function createCards(name, title) {
   var img = `./assets/activities/${name}/logo.png`;
-  var card = $('<img>').attr('src', img);
+  var card = $('<img>').attr('src', img).attr('alt', title);
   return card;
-}
-
-function createMobileList(data, year) {
-  var img = `./assets/images/${year}/${data.index}/logo.jpg`;
-  var item = $('<img>').attr('src', img).attr('width', '100%');
-  return item;
 }
 
 function initPage() {
@@ -23,8 +17,8 @@ function initPage() {
     var count = 0;
     while(count < limit){
       var index = p * 12 + count; 
-      var col = $('<div>').addClass('span3 tiles').attr("data-activity", news[index].activities).appendTo(row);
-      col.append(createCards(news[index].activities));
+      var col = $('<button>').addClass('span3 tiles').attr("data-activity", news[index].activities).appendTo(row);
+      col.append(createCards(news[index].activities, news[index].title));
       var details = $('<div>').addClass('details').appendTo(col);
       $('<h3>').text(news[index].title).appendTo(details);
       count++;
@@ -36,7 +30,7 @@ function initPage() {
   }
   initPagination(pageNum);
   // bind click event
-  $('div.tiles').click(navgation);
+  $('button.tiles').click(navgation);
 }
 
 function initPagination(pageNum) {
