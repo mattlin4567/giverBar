@@ -1,31 +1,448 @@
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 可移除 -->
-    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap2.3.css" />
-    <!------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
-    <script language="javascript" type="text/javascript" src="index.js"></script>
-    <script language="javascript" type="text/javascript" src="assets/activity_list.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  </head>
+<!DOCTYPE html>
+<html xmlns:fb="https://www.facebook.com/2008/fbml" lang="zh-Hant-TW">
 
-  <body>
+<head>
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Organization",
+			"url": "https://sme.moeasmea.gov.tw/startup",
+			"logo": "https://sme.moeasmea.gov.tw/startup/images/web/LOGO.png",
+			"contactPoint": [{
+				"@type": "ContactPoint",
+				"telephone": "+886-8-0058-9168",
+				"contactType": "customer service"
+			}]
+		}
+	</script>
 
-    <div class="stage container">
-      <img id="banner" src="./assets/images/banner.png" alt="givarbar banner"/>
+	<title>新創圓夢網</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Language" content="zh-tw">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="新創圓夢網，臺灣最大的創業資源平台，提供創業貸款、創新創業、創業計劃書撰寫方法等資訊以及提供創業諮詢服務...。" />
+	<meta name="keywords" content="創業貸款,創業諮詢,青年創業貸款,微型創業貸款,創業計劃書,創業輔導,網路開店" />
+	<meta name="author" content="新創圓夢網">
+	<meta name="company" content="新創圓夢網">
+	<meta name="revisit-after" content="1 days">
+	<meta name="rating" content="general">
+	<meta name="robots" content="index,follow,noarchive">
+	<meta property="og:site_name" content="新創圓夢網" />
+	<meta property="og:title" content="新創圓夢網" />
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="zh_TW" />
+	<meta property="og:image" content="http://sme.moeasmea.gov.tw/startup/images/web/fb_og_img.jpg" />
+	<meta property="og:description" content="新創圓夢網-臺灣最大創業創新資源網站平臺，提供創業貸款、創新創業、創業計劃書撰寫方法等資訊以及提供創業諮詢服務...。" />
+	<meta property="fb:admins" content="532079607" />
+	<meta property="fb:admins" content="10155894599357059" />
+	<meta property="fb:admins" content="2331051563648497" />
+	<meta property="fb:app_id" content="897249370336320" />
+	<link rel='alternate' media='only screen and (max-width: 640px)'
+		href='https://sme.moeasmea.gov.tw/startup/m/modules//'>
+	<link href="https://sme.moeasmea.gov.tw/Startup/images/web/icon.ico" type="image/x-icon" rel="shortcut icon" />
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/reset.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/style.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/bjqs.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/index.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/kyria.css" rel="stylesheet" type="text/css" />
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/bootstrap2.3.css" rel="stylesheet" type="text/css" />
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/bootstrap-grid.css" rel="stylesheet" type="text/css">
+	<link href="https://sme.moeasmea.gov.tw/Startup/css/cycda.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://sme.moeasmea.gov.tw/Startup/css/common.css">
+	<link rel="stylesheet" type="text/css" href="https://sme.moeasmea.gov.tw/Startup/css/fund-button.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="js/html5shiv.js"></script>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]>
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<![endif]-->
+	<!--[if !IE]>-->
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/jquery-2.1.0.min.js"></script>
+	<!--<![endif]-->
+
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/sme.lib.js"></script>
+	<script src="https://sme.moeasmea.gov.tw/Startup/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		g_str_dotPath = "";
+	</script>
+
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/bjqs.js"></script>
+	<script type="text/javascript" src="https://sme.moeasmea.gov.tw/Startup/js/top.js"></script>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5shiv.js"></script>
+	<script type="text/javascript" src="js/respond.min.js"></script>
+	<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<script language="JavaScript">
+		$(function () {
+			$("#login_icon").html(
+				'<a href="http://sme.moeasmea.gov.tw/startup/modules/login" style="text-decoration:none;color:#000000;" title="登入"><i class="fa fa-user" style="height:19px;vertical-align:middle;color:#000000;"></i>&nbsp;登入/註冊</a>'
+			);
+
+		});
+	</script>
+	<style>
+		.head {
+			width: 100%;
+			height: 105px;
+			-webkit-background: rgba(255%, 255%, 255%, 0.9);
+			-moz-background: rgba(255%, 255%, 255%, 0.9);
+			background: rgba(255, 255, 255, 1);
+			-webkit-box-shadow: 0 3px 10px rgba(0%, 0%, 0%, 0.4);
+			-moz-box-shadow: 0 3px 10px rgba(0%, 0%, 0%, 0.4);
+			box-shadow: 0 3px 10px rgba(0%, 0%, 0%, 0.4);
+			position: absolute;
+			z-index: 99;
+		}
+
+		.head .head_wapper ul.menu li a {
+			color: #000
+		}
+
+		.head .head_wapper ul.menu li a:hover {
+			color: #f3d654
+		}
+
+		/*
+hsl(195,100%,73%) 25%,
+hsl(260,100%,73%) 25%,
+hsl(99,30%,100%) 10%,
+hsl(30,57%,73%) 10%
+*/
+		#spTEXT {
+			font-family: "微軟正黑體", "Arial Unicode MS";
+			font-size: 18px;
+			margin-top: calc(50vh - 5vw);
+			text-align: center;
+			background: linear-gradient(60deg,
+					hsl(195, 100%, 73%) 25%,
+					hsl(260, 100%, 73%) 25%,
+					hsl(99, 30%, 100%) 10%,
+					hsl(30, 57%, 73%) 10%);
+			/*margin-bottom:10px;*/
+			/*text-shadow: 0.5px -10px #fff4;*/
+			color: #fff;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			animation: 120s BeProud linear infinite,
+				3s Always ease alternate infinite;
+		}
+
+		@keyframes BeProud {
+			100% {
+				background-position: 100vw 0px;
+			}
+		}
+
+		@keyframes Always {
+			100% {
+				transform: scale(1.1);
+			}
+		}
+	</style>
+
+	<div class="wapper">
+		<a href="#c" class="link-c" title="跳到主要內容區塊">跳到主要內容區塊</a>
+		<div class="responses hide" id="responses2">&nbsp;</div>
+		<a href="https://sme.moeasmea.gov.tw/startup/modules/infopack/detail/?sId=48" class="page_left_button"
+			id="page_left_button" title="紓困資訊"><img src="https://sme.moeasmea.gov.tw/startup/images/web/light.gif"
+				alt=""><br>紓<br>困<br>資<br>訊</a>
+		<div class="head">
+			<div id="top" title="回頂端"></div>
+			<div class="head_wapper">
+				<div style="float:right;margin:0 50px;text-align:right;color:#000000">
+					<a href="#u" accesskey="u" class="guiding-tile" title="選單連結區塊" style="top:4px;left: -28px;">:::</a>
+					<span id="login_icon" style="font-size:15px;line-height:19px;color:#000000;">&nbsp;</span>
+					<i class="fa fa-file-text" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a
+						href="https://sme.moeasmea.gov.tw/Startup/modules/epaper/index.php"
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;" title="電子報">電子報</a>
+					<i class="fa fa-caret-square-o-right" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a
+						href="https://sme.moeasmea.gov.tw/Startup/modules/introduction/index.php"
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000" title="網站介紹">網站介紹</a>
+					<!-- <i class="fa fa-youtube-square" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a href="https://www.youtube.com/channel/UCUMhfdYN6idmvXHQVNorObg" target="_blank" style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;" onclick="trackOutboundLink('https://www.youtube.com/channel/UCUMhfdYN6idmvXHQVNorObg','首頁'); return false;" title="YouTube">YT</a> -->
+					<i class="fa fa-bullhorn" style="color:#000000;margin-top:5px;font-size:15px;"></i> <button
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;border: none;background: transparent;font-family: 微軟正黑體;padding: 0px;"
+						id="responses" title="問題反應">問題反應</button>
+					<i class="fa fa-sun-o" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a
+						href="https://startup.sme.gov.tw/"
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;"
+						onclick="trackOutboundLink('https://startup.sme.gov.tw/','首頁'); return false;"
+						title="SME English">English</a>
+					<i class="fa fa-facebook-square" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a
+						href="https://www.facebook.com/StartUpTaiwan"
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;"
+						onclick="trackOutboundLink('https://www.facebook.com/StartUpTaiwan','首頁'); return false;"
+						title="創業圓夢Facebook">FB</a>
+					<i class="fa fa-youtube-square" style="color:#000000;margin-top:5px;font-size:18px;"></i> <a
+						href="https://www.youtube.com/channel/UCUMhfdYN6idmvXHQVNorObg"
+						style="text-decoration:none;font-size:15px;line-height:19px;color:#000000;"
+						onclick="trackOutboundLink('https://www.youtube.com/channel/UCUMhfdYN6idmvXHQVNorObg','首頁'); return false;"
+						title="新創圓夢網Youtube頻道">YT</a>
+				</div>
+
+				<div class="logo"><a href="https://sme.moeasmea.gov.tw/Startup/index.php" title="新創圓夢網"><img
+							src="https://sme.moeasmea.gov.tw/Startup/images/web/LOGO-2018.png" width="265" height="92"
+							alt="新創圓夢網logo"></a></div>
+				<ul class="menu">
+					<li><a href="https://sme.moeasmea.gov.tw/Startup/modules/new_southbound/index.php"
+							title="新南向">新南向</a></li>
+					<li><a href="https://sme.moeasmea.gov.tw/Startup/modules/highlight/index.php" title="創業亮點">創業亮點</a>
+					</li>
+					<li><a href="https://sme.moeasmea.gov.tw/Startup/modules/talk/index.php" title="創業諮詢">創業諮詢</a></li>
+					<li><a href="https://sme.moeasmea.gov.tw/Startup/modules/download/index.php" title="下載專區">下載專區</a>
+					</li>
+					<li><a href="https://sme.moeasmea.gov.tw/Startup/modules/youtube/index.php" title="影音專區">影音專區</a>
+					</li>
+					<li><a href="https://www.spp.org.tw/spp/" id="spTEXT"
+							onclick="trackOutboundLink('https://www.spp.org.tw/spp/','首頁'); return false;"
+							title="另開新頁面-新創採購">新創採購</a></li>
+				</ul>
+			</div>
+			<div class="search" style="display:none">
+				<div class="type"><input title="全站搜尋" name="keyword" type="text" placeholder="全站搜尋"></div>
+				<div class="btn"><a href="javascript:void(0)" title="查詢關鍵字按鈕"><img
+							src="http://sme.moeasmea.gov.tw/startup/images/web/search_btn.png" width="19" height="19"
+							alt="查詢關鍵字按鈕"></a></div>
+			</div>
+			<noscript>
+				<P>本網頁需支援JAVASCRIPT，請修正您的瀏覽器設定，以便獲得最佳的瀏覽體驗</P>
+			</noscript>
+		</div>
+		<div class="clearfix"></div>
+		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+		<!--BANNER-->
+
+		<div class="banner" style="height:100px">
+
+		</div>
+		<!--
+<div class="banner hide">
+    <div id="pre" class="pre"></div>
+    <div id="next" class="next"></div>
+
+    <div id="abgneBlock">
+        <ul class="bjqs list">
+            <li><a href="#"><img src="images/web/banner_01.jpg" alt="banner_01"></a></li>
+            <li><a href="#"><img src="images/web/banner_02.jpg" alt="banner_02"></a></li>
+        </ul>
     </div>
-    <div class="bg">  
-      <div class="container">
-        <div class="activities" id="activity-list">
-        </div>
-        <div class="pagination pagination-centered" style="display: none;">
-        </div>
-      </div>
-    </div>
-  </body>
+	<div style="position:absolute;left:50%;top:85%;z-index:10000;"><img src="images/web/uparrow.png" alt="hideBanner" id="hideBanner"></div>
+</div>
+-->
+		<script language="JavaScript">
+			$(function () {
+				$("#hideBanner").click(function () {
+					$("DIV.banner").toggle('slow');
+				});
+
+				$("#searchform").find("i[name='keyword_search']").on("click", function () {
+					$("#searchform").submit();
+				});
+				$("#searchform").find("i[name='keyword_clear']").on("click", function () {
+					$("#searchform").find("input[name='keyword']").val("");
+				});
+
+			});
+		</script>
+	</div>
+
+	<!--內容-->
+	<div class="content">
+		<!-- 請將新的程式碼放置於此 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+		<script language="javascript" type="text/javascript" src="index.js"></script>
+		<script language="javascript" type="text/javascript" src="assets/activity_list.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<div class="stage container">
+			<img id="banner" src="./assets/images/banner.png" alt="givarbar banner" />
+		</div>
+		<div class="bg">
+			<div class="container">
+				<div class="activities" id="activity-list">
+				</div>
+				<div class="pagination pagination-centered" style="display: none;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--footer-->
+	<div class="foot">
+		<a href="#z" accesskey="z" class="guiding-tile" title="頁尾網站資訊">:::</a>
+		<div class="gotop"><button id="gotop" title="回頂端"
+				style="display:block;padding:0;border:none;background: transparent;"><img alt="回頂端"
+					src="https://sme.moeasmea.gov.tw/Startup/images/web/top_btn.png" width="59" height="39"></button>
+		</div>
+		<div class="foot_wapper">
+			<div class="link01">
+				<div class="title">熱門連結</div>
+				<div class="line" style="width:104px; height:6px; background-color:#FFF;"></div>
+				<ul>
+					<li><a href="https://woman.sysme.org.tw/"
+							onclick="trackOutboundLink('https://woman.sysme.org.tw/','首頁'); return false;"
+							title="女性創業飛雁計畫">>女性創業飛雁計畫</a></li>
+					<li><a href="http://www.smelearning.org.tw/"
+							onclick="trackOutboundLink('http://www.smelearning.org.tw/','首頁'); return false;"
+							title="中小企業網路大學校">>中小企業網路大學校</a></li>
+					<li><a href="http://www.sbir.org.tw/"
+							onclick="trackOutboundLink('http://www.sbir.org.tw/','首頁'); return false;"
+							title="小型企業創新研發計畫">>小型企業創新研發計畫</a></li>
+					<li><a href="https://si.taiwan.gov.tw/"
+							onclick="trackOutboundLink('https://si.taiwan.gov.tw/','首頁'); return false;"
+							title="社會創新平台">>社會創新平台</a></li>
+					<li><a href="https://incubator.moeasmea.gov.tw/"
+							onclick="trackOutboundLink('https://incubator.moeasmea.gov.tw/','首頁'); return false;"
+							title="育成加速卓越服務網">>育成加速卓越服務網</a></li>
+					<li><a href="https://law.moeasmea.gov.tw/ailt/"
+							onclick="trackOutboundLink('https://law.moeasmea.gov.tw/ailt/','首頁'); return false;"
+							title="法律諮詢服務網">>法律諮詢服務網</a></li>
+					<li><a href="https://friap.moeasmea.gov.tw/"
+							onclick="trackOutboundLink('https://friap.moeasmea.gov.tw/','首頁'); return false;"
+							title="中小企業財會諮詢服務網">>中小企業財會諮詢服務網</a></li>
+					<li><a href="http://micro.sme.gov.tw/"
+							onclick="trackOutboundLink('http://micro.sme.gov.tw/','首頁'); return false;"
+							title="微型及個人事業支援與輔導">>微型及個人事業支援與輔導</a></li>
+					<li><a href="modules/entrepreneur_visa/" title="創業家簽證">>創業家簽證</a></li>
+					<li><a href="https://findit.org.tw/indexV2.aspx"
+							onclick="trackOutboundLink('https://findit.org.tw/indexV2.aspx','首頁'); return false;"
+							title="早期資金觀測站">>早期資金觀測站</a></li>
+				</ul>
+			</div>
+			<div class="link02">
+				<div class="title">相關連結</div>
+				<div class="line" style="width:104px; height:6px; background-color:#FFF;"></div>
+				<ul>
+					<li><a href="https://www.titan.org.tw/zh/"
+							onclick="trackOutboundLink('https://www.titan.org.tw/zh/','首頁'); return false;"
+							title="亞洲矽谷創新創業鏈結">>亞洲矽谷創新創業鏈結</a></li>
+					<li><a href="https://www.triplelinkage.com/"
+							onclick="trackOutboundLink('https://www.triplelinkage.com/','首頁'); return false;"
+							title="臺灣創新快製媒合中心">>臺灣創新快製媒合中心</a></li>
+					<li><a href="https://beboss.wda.gov.tw/"
+							onclick="trackOutboundLink('https://beboss.wda.gov.tw/','首頁'); return false;"
+							title="微型創業鳳凰">>微型創業鳳凰</a></li>
+					<li><a href="http://www.tpex.org.tw/web/regular_emerging/creative_emerging/Creative_emerging.php?l=zh-tw"
+							onclick="trackOutboundLink('http://www.tpex.org.tw/web/regular_emerging/creative_emerging/Creative_emerging.php?l=zh-tw','首頁'); return false;"
+							title="創櫃板">>創櫃板</a></li>
+					<li><a href="http://ustart.yda.gov.tw/"
+							onclick="trackOutboundLink('http://ustart.yda.gov.tw/','首頁'); return false;"
+							title="U-start">>U-start</a></li>
+					<li><a href="http://www.angel885.org.tw/"
+							onclick="trackOutboundLink('http://www.angel885.org.tw/','首頁'); return false;"
+							title="創業天使計畫">>創業天使計畫</a></li>
+					<li><a href="http://www.innosquare.economic.ntpc.net.tw/site/"
+							onclick="trackOutboundLink('http://www.innosquare.economic.ntpc.net.tw/site/','首頁'); return false;"
+							title="新北創力坊">>新北創力坊</a></li>
+					<li><a href="https://www.startup.taipei/"
+							onclick="trackOutboundLink('https://www.startup.taipei/','首頁'); return false;"
+							title="創業臺北">>創業臺北</a></li>
+					<li><a href="https://www.bsmi.gov.tw/wSite/mp?mp=82"
+							onclick="trackOutboundLink('https://www.bsmi.gov.tw/wSite/mp?mp=82','首頁'); return false;"
+							title="應施檢驗商品檢索網">>應施檢驗商品檢索網</a></li>
+					<li><a href="https://www.exportadv.com.tw/"
+							onclick="trackOutboundLink('https://www.exportadv.com.tw/','首頁'); return false;"
+							title="中小企業國際行銷">>中小企業國際行銷</a></li>
+				</ul>
+			</div>
+
+			<div class="contact_infor">
+				<ul>
+					<li>TEL: 0800-589-168&nbsp;&nbsp;&nbsp;FAX: 02-23375152 <br>TIME: 每週一(Mon)~週五(Fri)
+						09:00-18:00<br />國定假日及特定假日除外。</li>
+					<li style="font-size:12px; line-height:20px;">
+						主辦單位：經濟部中小企業處<br />本網站之圖片、文章等內容，屬著作權人擁有，任何人未經授權同意，不得以任何形式予以利用、使用、轉載、散布、出版或傳播，違者依法追究責任。</li>
+					<li style="font-size:12px; line-height:20px;">為提供使用者有文書軟體選擇的權利，本網站文件為ODF開放文件格式，建議您安裝免費開源軟體(<a
+							href="http://zh-tw.libreoffice.org/download/libreoffice-still/" target="_blank"
+							style="color:#FFF" title="另開新視窗-免費開源軟體LibreOffice下載"> 免費開源軟體LibreOffice下載</a>) 或以您慣用的軟體開啟文件。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="copyright">
+			<div class="text-center" style="font-size:16px">
+				<a href="https://sme.moeasmea.gov.tw/startup/m//Startup/index.php" title="手機版" style="color: #FFF;"
+					onclick="$.cookie('isComputer', '0', { path: '/', expires: 7 });">手機版</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal fade" style="width:600px">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<p style="font-size: 1.5rem" class="modal-title">系統/網頁問題反映</p>
+				</div>
+				<div class="modal-body">
+					<div class="infor btn-warning">您可將問題填寫至此，我們會盡快為您處理~謝謝!!</div>
+					<div data-zone-name="feedback">
+						<form action="" method="post" class="ajaxform" style="width:90%;margin:10px 20px;display:block;"
+							id="Qform" title="系統/網頁問題反映">
+							<table cellpadding=4 class="form-group" border=0>
+								<tr>
+									<td align="right" id="feedback_name" width=100><label>姓名：</label></td>
+									<td headers="feedback_name"><input title="請輸入您的姓名" type="text" name="username"
+											maxlength="50" placeholder="姓名(必填)" data-is-input="1" data-is-send="1"
+											class="form-control" value="" style="width:150px;"></td>
+									<td width=100 headers="feedback_name"><label><input type="radio" name="sex"
+												value="M" data-is-send="1" checked>男</label>&nbsp;&nbsp;<label><input
+												type="radio" name="sex" value="F" data-is-send="1">女</label></td>
+								</tr>
+								<tr>
+									<td align="right" id="feedback_tel"><label>聯絡方式：</label></td>
+									<td colspan=2 headers="feedback_tel"><input title="請輸入您的聯絡方式" type="text" name="tel"
+											maxlength="50" placeholder="請留下手機或市話(必填)" data-is-input="1" data-is-send="1"
+											class="form-control" value=""></td>
+								</tr>
+								<tr>
+									<td align="right" id="feedback_Email"><label>Email：</label></td>
+									<td colspan=2 headers="feedback_Email"><input title="請輸入您的Email" type="text"
+											name="email" maxlength="80" placeholder="E-mail(必填)" data-is-input="1"
+											data-is-send="1" class="form-control" value="" style="width:250px;"></td>
+								</tr>
+								<tr>
+									<td align="right" id="feedback_Text"><label>留言內容：</label></td>
+									<td colspan=2 headers="feedback_Email">
+										<div style="color:red">如果您要詢問創業問題，請利用<a
+												href="http://sme.moeasmea.gov.tw/startup/modules/talk/index.php"
+												title="創業諮詢服務">創業諮詢服務</a>來填寫相關創業問題!!</div><textarea title="請輸入您的留言內容"
+											name="msgs" data-is-input="1" data-is-send="1" class="form-control"
+											style="height:100px;width:280px"
+											placeholder="此為網頁問題反映，不回覆創業相關問題"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" colspan=3><button type="button" id="submitFeedback"
+											class="btn btn-primary">送出 / submit</button></td>
+								</tr>
+
+
+							</table>
+
+							<input type="hidden" name="refUrl" value="/Startup/index.php" data-is-send="1">
+							<input type="hidden" name="op" value="feedback" data-is-send="1">
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+				</div>
+			</div>
+		</div>
+	</div> <!-- End  myModal-->
+</body>
 
 </html>

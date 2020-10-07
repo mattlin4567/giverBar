@@ -5,11 +5,11 @@ function initImagesCarousel(id, num) {
   for (var i = 0; i < num; i++) {
     var img = `./assets/activities/${id}/image${i}.jpg`;
     var card = $('<div>');
-    $('<img>').attr('src', img).attr('alt',  `圖片${i}`).appendTo(card);
+    $('<img>').attr('src', img).attr('alt', `圖片${i}`).appendTo(card);
     list.append(card);
   };
-  list.children().each( function( index ) {
-    $(this).attr('data-position', index );
+  list.children().each(function (index) {
+    $(this).attr('data-position', index);
   });
   list.owlCarousel({
     center: true,
@@ -19,10 +19,10 @@ function initImagesCarousel(id, num) {
     loop: true,
     dots: false,
   });
-  $('.owl-item>div').click(function() {
+  $('.owl-item>div').click(function () {
     // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
     var $speed = 300;  // in ms
-    $('#image-carousel').trigger('to.owl.carousel', [$(this).data('position'), $speed] );
+    $('#image-carousel').trigger('to.owl.carousel', [$(this).data('position'), $speed]);
   })
 }
 
@@ -56,8 +56,8 @@ function initOtherActivityCarousel() {
       },
     },
   });
-  
-  $('div.thumbnail').click(function () {
+
+  $('button.thumbnail').click(function () {
     var i = $(this).attr('data-id');
     window.location = `./content.html?id=${i}`;
   });
@@ -66,7 +66,7 @@ function initOtherActivityCarousel() {
 function initContent(d) {
   $(".main").text(d.title.main);
   var body = $(".content-body");
-  for(var i=0; i<d.content.paragraph.length; i++){
+  for (var i = 0; i < d.content.paragraph.length; i++) {
     var paragraph = $("<div>").addClass("paragraph").appendTo(body);
     paragraph.text(d.content.paragraph[i]);
   }
@@ -86,7 +86,7 @@ function addOpenGraphtags(id, d) {
   $('<meta>')
     .attr("property", "og:title")
     .attr("content", `https://${document.domain}/content.html?id=${id}`)
-    .appendTo(head);  
+    .appendTo(head);
 }
 
 function addSocialButton(url) {
@@ -97,8 +97,8 @@ function addSocialButton(url) {
 
 function onYouTubeIframeAPIReady() {
   console.info("youtube ready")
-  $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function(json) {
-    var imageNum = json.images ? json.images : 3; 
+  $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function (json) {
+    var imageNum = json.images ? json.images : 3;
     initImagesCarousel(id, imageNum);
     addSocialButton(json.web);
     initContent(json);
@@ -107,20 +107,20 @@ function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         videoId: json.youtube,
       });
-    } 
+    }
   });
 }
 
-(function(d, s, id) {
+(function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
   fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));
 
 $(document).ready(function () {
   id = getId();
   $('.share-btn > img').attr("src", `./assets/activities/${id}/logo.png`);
-  
+
 });
