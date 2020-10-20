@@ -89,18 +89,18 @@ function addOpenGraphtags(id, d) {
     .appendTo(head);
 }
 
-function addSocialButton(url) {
+function addSocialButton(url, title) {
   $('.share-btn').attr("href", url);
-  $('.fb-share-btn').attr("href", `https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${encodeURIComponent(document.URL)}&display=popup&ref=plugin&src=share_button`);
-  $('.line-it-button').attr("data-url", document.URL);
+  $('.fb-share-btn').attr("href", `http://www.facebook.com/share.php?u=${document.URL}`);
+  $('.line-it-button').attr("href", `http://line.me/R/msg/text/?${title}%0D%0A${document.URL}`);
 }
 
 function onYouTubeIframeAPIReady() {
   console.info("youtube ready")
-  $.getJSON(`https://mattlin4567.github.io/giverBar/assets/activities/${id}/data.json`, function (json) {
+  $.getJSON(`./assets/activities/${id}/data.json`, function (json) {
     var imageNum = json.images ? json.images : 3;
     initImagesCarousel(id, imageNum);
-    addSocialButton(json.web);
+    addSocialButton(json.web, json.title.main);
     initContent(json);
     initOtherActivityCarousel();
     if (json.youtube) {
@@ -111,16 +111,7 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-(function (d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
 $(document).ready(function () {
   id = getId();
   $('.share-btn > img').attr("src", `./assets/activities/${id}/logo.png`);
-
 });
