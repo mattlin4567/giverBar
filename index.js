@@ -1,5 +1,5 @@
 function createCards(name, title) {
-  var img = `./assets/activities/${name}/logo.png`;
+  var img = './assets/activities/'+name+'/logo.png';
   var card = $('<img>').attr('src', img).attr('alt', title);
   return card;
 }
@@ -11,7 +11,7 @@ function initPage() {
   var newsNum = news.length;
   var pageNum = Math.ceil(newsNum / 12);
   for (var p = 0; p < pageNum; p++) {
-    var page = $('<div>').attr("id", `page-${p}`).appendTo(list);
+    var page = $('<div>').attr("id", 'page-'+p).appendTo(list);
     var row = $('<div>').addClass('row form-group');
     var limit = newsNum - ((p + 1) * 12) > 0 ? 12 : newsNum - (p * 12);
     var count = 0;
@@ -92,7 +92,7 @@ function initPagination(pageNum) {
 
 function navgation() {
   var activity = $(this).attr('data-activity');
-  window.location = `./content.html?id=${activity}`;
+  window.location = './content.html?id='+activity;
 }
 
 $(document).ready(function () {

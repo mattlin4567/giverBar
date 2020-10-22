@@ -3,9 +3,9 @@ function initImagesCarousel(id, num) {
   var md = new MobileDetect(window.navigator.userAgent);
   var list = $('#image-carousel');
   for (var i = 0; i < num; i++) {
-    var img = `./assets/activities/${id}/image${i}.jpg`;
+    var img = './assets/activities/'+id+'/image'+i+'.jpg';
     var card = $('<div>');
-    $('<img>').attr('src', img).attr('alt', `圖片${i}`).appendTo(card);
+    $('<img>').attr('src', img).attr('alt', '圖片'+i).appendTo(card);
     list.append(card);
   };
   list.children().each(function (index) {
@@ -30,7 +30,7 @@ function initOtherActivityCarousel() {
   var list = $('#other-activity');
   var news = NEWS;
   news.forEach(function (n) {
-    var img = `./assets/activities/${n.activities}/logo.png`;
+    var img = './assets/activities/'+n.activities+'/logo.png';
     var card = $('<button>')
       .addClass('thumbnail our-team')
       .attr('data-id', n.activities);
@@ -59,7 +59,7 @@ function initOtherActivityCarousel() {
 
   $('button.thumbnail').click(function () {
     var i = $(this).attr('data-id');
-    window.location = `./content.html?id=${i}`;
+    window.location = './content.html?id='+i;
   });
 }
 
@@ -81,23 +81,23 @@ function addOpenGraphtags(id, d) {
   var head = $("head");
   $('<meta>')
     .attr("property", "og:url")
-    .attr("content", `https://${document.domain}/content.html?id=${id}`)
+    .attr("content", 'https://'+document.domain+'/content.html?id='+id)
     .appendTo(head);
   $('<meta>')
     .attr("property", "og:title")
-    .attr("content", `https://${document.domain}/content.html?id=${id}`)
+    .attr("content", 'https://'+document.domain+'/content.html?id='+id)
     .appendTo(head);
 }
 
 function addSocialButton(url, title) {
   $('.share-btn').attr("href", url);
-  $('.fb-share-btn').attr("href", `http://www.facebook.com/share.php?u=${document.URL}`);
-  $('.line-it-button').attr("href", `http://line.me/R/msg/text/?${title}%0D%0A${document.URL}`);
+  $('.fb-share-btn').attr("href", 'http://www.facebook.com/share.php?u='+document.URL);
+  $('.line-it-button').attr("href", 'http://line.me/R/msg/text/?'+title+'%0D%0A'+document.URL);
 }
 
 function onYouTubeIframeAPIReady() {
   console.info("youtube ready")
-  $.getJSON(`./assets/activities/${id}/data.json`, function (json) {
+  $.getJSON('./assets/activities/'+id+'/data.json', function (json) {
     var imageNum = json.images ? json.images : 3;
     initImagesCarousel(id, imageNum);
     addSocialButton(json.web, json.title.main);
@@ -113,5 +113,5 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
   id = getId();
-  $('.share-btn > img').attr("src", `./assets/activities/${id}/logo.png`);
+  $('.share-btn > img').attr("src", './assets/activities/'+id+'/logo.png');
 });
