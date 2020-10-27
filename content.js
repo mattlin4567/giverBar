@@ -1,4 +1,6 @@
 var id = 0;
+var player = null;
+var data = {};
 function initImagesCarousel(id, num) {
   var md = new MobileDetect(window.navigator.userAgent);
   var list = $('#image-carousel');
@@ -96,22 +98,25 @@ function addSocialButton(url, title) {
 }
 
 function onYouTubeIframeAPIReady() {
-  console.info("youtube ready")
-  $.getJSON('./assets/activities/'+id+'/data.json', function (json) {
-    var imageNum = json.images ? json.images : 3;
-    initImagesCarousel(id, imageNum);
-    addSocialButton(json.web, json.title.main);
-    initContent(json);
-    initOtherActivityCarousel();
-    if (json.youtube) {
-      player = new YT.Player('player', {
-        videoId: json.youtube,
-      });
-    }
-  });
+  if (data.youtube) {
+    player = new YT.Player('player', {
+      videoId: data.youtube,
+    });
+  }
 }
 
 $(document).ready(function () {
   id = getId();
   $('.share-btn > img').attr("src", './assets/activities/'+id+'/logo.png');
+  $.getJSON('./giverBar/assets/activities/'+id+'/data.json', function (json) {
+    data = json;
+    var imageNum = json.images ? json.images : 3;
+    initImagesCarousel(id, imageNum);
+    addSocialButton(json.web, json.title.main);
+    initContent(json);
+    initOtherActivityCarousel();
+    if(YT.loaded && !player) {
+      onYouTubeIframeAPIReady();
+    }
+  });
 });
