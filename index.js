@@ -98,6 +98,9 @@ var player;
 function onYouTubeIframeAPIReady() {
   console.info("onYouTubeIframeAPIReady")
   player = new YT.Player('player', {
+    playerVars: { 
+      'origin': window.location.host
+    },
     events: {
       'onReady': onPlayerReady,
     },
