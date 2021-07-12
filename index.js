@@ -95,6 +95,26 @@ function navgation() {
   window.location = './content.html?id='+activity;
 }
 
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    events: {
+      'onReady': onPlayerReady,
+    },
+
+  });
+}
+
+function onPlayerReady() {
+  var d = new Date();
+  var n = d.getSeconds();
+  player.loadPlaylist({
+    'listType': 'playlist',
+    'list': 'PLPON2GpIbbWFNQ2Z00tZhVcdynLweecCE',
+    'index': n % 10
+  });
+}
+
 $(document).ready(function () {
   var md = new MobileDetect(window.navigator.userAgent);
   if (md.mobile()) {
