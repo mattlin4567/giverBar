@@ -6,7 +6,6 @@ function createCards(name, title) {
 
 function initPage() {
   var news = NEWS.reverse();
-  console.info(news)
   var list = $('#activity-list');
   var newsNum = news.length;
   var pageNum = Math.ceil(newsNum / 12);
@@ -97,15 +96,16 @@ function navgation() {
 
 var player;
 function onYouTubeIframeAPIReady() {
+  console.info("onYouTubeIframeAPIReady")
   player = new YT.Player('player', {
     events: {
       'onReady': onPlayerReady,
     },
-
   });
 }
 
 function onPlayerReady() {
+  console.info("onPlayerReady")
   var d = new Date();
   var n = d.getSeconds();
   player.loadPlaylist({
