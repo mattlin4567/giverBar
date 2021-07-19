@@ -262,16 +262,20 @@ hsl(30,57%,73%) 10%
 	<div class="content">
 		<!-- 請將新的程式碼放置於此 -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+		<script language="javascript" type="text/javascript"
+			src="assets/lib/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
 		<script async language="javascript" type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
 		<script language="javascript" type="text/javascript" src="index.js"></script>
 		<script language="javascript" type="text/javascript" src="assets/activity_list.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="assets/lib/OwlCarousel2-2.3.4/owl.carousel.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 		<div class="stage container">
 			<img id="banner" src="./assets/images/banner.png" alt="givarbar banner" />
 		</div>
 		<div class="bg">
-			<div class="video">
-				<div id="player"></div>
+			<div class="container">
+				<div id="video-carousel" class="owl-carousel owl-theme"></div>
 			</div>
 			<div class="container">
 				<div class="activities" id="activity-list">

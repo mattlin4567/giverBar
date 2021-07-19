@@ -94,28 +94,39 @@ function navgation() {
   window.location = './content.html?id='+activity;
 }
 
-var player;
+var player = [];
 function onYouTubeIframeAPIReady() {
   console.info("onYouTubeIframeAPIReady")
-  player = new YT.Player('player', {
-    playerVars: { 
-      'origin': window.location.host
-    },
-    events: {
-      'onReady': onPlayerReady,
-    },
+  for(var i=0; i<VIDEOS.length; i++) {
+    var id = 'player-'+i;
+    console.log(id);
+    player.push(new YT.Player(id, {
+      videoId: VIDEOS[i],
+      playerVars: { 
+        'origin': window.location.host
+      }
+    }));
+  }
+  console.log(player);
+  $('#video-carousel').owlCarousel({
+    startPosition: 0,
+    autoWidth:true,
+    center:true,
+    loop: true,
+    margin: 10,
+    nav: true,
+    navText: ['&laquo;', '&raquo;'],
+    dots: false,
   });
 }
 
-function onPlayerReady() {
-  console.info("onPlayerReady")
-  var d = new Date();
-  var n = d.getSeconds();
-  player.loadPlaylist({
-    'listType': 'playlist',
-    'list': 'PLPON2GpIbbWFNQ2Z00tZhVcdynLweecCE',
-    'index': n % 10
-  });
+
+function initVideo() {
+  console.info("initVideo")
+  var carousel = $('#video-carousel');
+  for(var i=0; i<VIDEOS.length; i++) {
+    $('<div>').attr("id", 'player-'+i).appendTo(carousel);
+  }
 }
 
 $(document).ready(function () {
@@ -124,6 +135,7 @@ $(document).ready(function () {
     var banner = $('#banner');
     banner.height(Math.floor(banner.width() / 4.37));
   }
+  initVideo();
   initPage();
 });
 

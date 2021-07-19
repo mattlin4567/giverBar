@@ -286,6 +286,25 @@ button.tiles:hover .details {
   content: none !important;
 }
 
+#video-carousel .owl-nav {
+  position: absolute;
+  width: 100%;    
+  top: 50%;
+}
+
+#video-carousel .owl-prev, 
+#video-carousel .owl-next {
+  position: absolute;
+}
+
+#video-carousel .owl-next {
+  right: -30px;
+}
+
+#video-carousel .owl-prev {
+  left: -30px;
+}
+
 /* 覆寫 bootstrap */
 
 .pagination ul {

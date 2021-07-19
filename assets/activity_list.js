@@ -50,3 +50,16 @@ const NEWS = [
         'title': '雲林100種生活#4 貓有九條命，我有十個肝',
     }
 ];
+
+const VIDEOS = [
+    'y44dhWg3GKk',
+    'Nro1TdB_OVs',
+    'FMB8VT9JE3o',
+    'c860Ueq5Hmg',
+    'RfH7IJtbdcE',
+    'kgWjeNTTT5U',
+    'M4Xm4rKOgpc',
+    'Aufrh6lcSj0',
+    'lt-SAUCDzRM',
+    '2-qc7UYF2mg',
+]
