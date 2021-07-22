@@ -115,7 +115,7 @@ function onYouTubeIframeAPIReady() {
     loop: true,
     margin: 10,
     nav: true,
-    navText: ['&laquo;', '&raquo;'],
+    navText:['<i class="fas fa-chevron-circle-left fa-2x"></i>','<i class="fas fa-chevron-circle-right fa-2x"></i>'],
     dots: false,
   });
 }

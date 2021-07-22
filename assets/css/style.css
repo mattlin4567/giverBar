@@ -286,10 +286,18 @@ button.tiles:hover .details {
   content: none !important;
 }
 
+#video-carousel .owl-item {
+  transform: scaleY(95%);
+}
+
+#video-carousel .owl-item.center {
+  transform: none;
+}
+
 #video-carousel .owl-nav {
   position: absolute;
   width: 100%;    
-  top: 50%;
+  top: calc(50% - 2em);
 }
 
 #video-carousel .owl-prev, 
@@ -298,11 +306,11 @@ button.tiles:hover .details {
 }
 
 #video-carousel .owl-next {
-  right: -30px;
+  right: -2.5em;;
 }
 
 #video-carousel .owl-prev {
-  left: -30px;
+  left: -2.5em;;
 }
 
 /* 覆寫 bootstrap */
