@@ -48,18 +48,28 @@ const NEWS = [
         'activities': '20201121',
         'date': '2020-11-21',
         'title': '雲林100種生活#4 貓有九條命，我有十個肝',
+    },
+    {
+        'activities': '20210514',
+        'date': '2021-05-14',
+        'title': 'GO FIT 加速器帶你宜居蘭城',
+    },
+    {
+        'activities': '20210706',
+        'date': '2021-07-06',
+        'title': '大圈圈業師夥伴來開槓',
     }
 ];
 
 const VIDEOS = [
-    'y44dhWg3GKk',
-    'Nro1TdB_OVs',
-    'FMB8VT9JE3o',
-    'c860Ueq5Hmg',
-    'RfH7IJtbdcE',
-    'kgWjeNTTT5U',
-    'M4Xm4rKOgpc',
-    'Aufrh6lcSj0',
-    'lt-SAUCDzRM',
-    '2-qc7UYF2mg',
+    'WW-tiGONub8',
+    'EtPivNDAiWY',
+    '19M02XgyOVE',
+    'dWc0TO2Mxic',
+    'YGAIvDyZJCA',
+    'ZjZCR0grlb8',
+    'n4_FCvYUmyQ',
+    'sSL8R_fTNls',
+    'Y0I8iEeaPbg',
+    'pC-XVQstK3o',
 ]

@@ -97,45 +97,78 @@ function navgation() {
 var player = [];
 function onYouTubeIframeAPIReady() {
   console.info("onYouTubeIframeAPIReady")
-  for(var i=0; i<VIDEOS.length; i++) {
-    var id = 'player-'+i;
-    console.log(id);
-    player.push(new YT.Player(id, {
-      videoId: VIDEOS[i],
+  if (md.mobile()) {
+    player = new YT.Player('player', {
       playerVars: { 
         'origin': window.location.host
-      }
-    }));
+      },
+      events: {
+        'onReady': onPlayerReady,
+      },
+    });
+  } else {
+    for(var i=0; i<VIDEOS.length; i++) {
+      var id = 'player-'+i;
+      console.log(id);
+      player.push(new YT.Player(id, {
+        videoId: VIDEOS[i],
+        playerVars: { 
+          'origin': window.location.host
+        }
+      }));
+    }
+    $('#video-carousel').owlCarousel({
+      startPosition: 0,
+      autoWidth:true,
+      center:true,
+      loop: true,
+      margin: 10,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav:false
+        },
+        600: {
+          items: 3,
+          navText:['<i class="fas fa-chevron-circle-left fa-2x"></i>','<i class="fas fa-chevron-circle-right fa-2x"></i>'],
+          nav:true
+        }
+      },
+    });
   }
-  console.log(player);
-  $('#video-carousel').owlCarousel({
-    startPosition: 0,
-    autoWidth:true,
-    center:true,
-    loop: true,
-    margin: 10,
-    nav: true,
-    navText:['<i class="fas fa-chevron-circle-left fa-2x"></i>','<i class="fas fa-chevron-circle-right fa-2x"></i>'],
-    dots: false,
-  });
 }
 
+function onPlayerReady() {
+  console.info("onPlayerReady")
+  var d = new Date();
+  var n = d.getSeconds();
+  player.loadPlaylist({
+    'listType': 'playlist',
+    'list': 'PLPON2GpIbbWFNQ2Z00tZhVcdynLweecCE',
+    'index': n % 10
+  });
+}
 
 function initVideo() {
   console.info("initVideo")
   var carousel = $('#video-carousel');
   for(var i=0; i<VIDEOS.length; i++) {
-    $('<div>').attr("id", 'player-'+i).appendTo(carousel);
+    var vid = $('<div>').addClass('video').css({position:'relative',height:0,'padding-bottom':'56.28%'});
+    $('<div>').attr("id", 'player-'+i).appendTo(vid);
+    carousel.append(vid);
   }
 }
 
+var md;
 $(document).ready(function () {
-  var md = new MobileDetect(window.navigator.userAgent);
+  md = new MobileDetect(window.navigator.userAgent);
   if (md.mobile()) {
     var banner = $('#banner');
     banner.height(Math.floor(banner.width() / 4.37));
+  } else {
+    initVideo();
   }
-  initVideo();
   initPage();
 });
 

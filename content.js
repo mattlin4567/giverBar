@@ -107,7 +107,7 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
   id = getId();
-  $('.share-btn > img').attr("src", './assets/activities/'+id+'/logo.png');
+  $('.share-btn > img').attr("onerror", "this.src='./assets/activities/"+id+"/logo.png'").attr("src", "./assets/activities/"+id+"/social_logo.png");
   $.getJSON('./giverBar/assets/activities/'+id+'/data.json', function (json) {
     data = json;
     var imageNum = json.images ? json.images : 3;

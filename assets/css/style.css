@@ -287,10 +287,12 @@ button.tiles:hover .details {
 }
 
 #video-carousel .owl-item {
+  filter: blur(2px);
   transform: scaleY(95%);
 }
 
 #video-carousel .owl-item.center {
+  filter: none;
   transform: none;
 }
 
@@ -326,7 +328,7 @@ button.tiles:hover .details {
 
 @media only screen and (max-width: 768px) {
   .hidden-xs {
-    display: none;
+    display: none !important;
   }
 
   .stage, .bg {
@@ -372,7 +374,9 @@ button.tiles:hover .details {
   #other-activity .owl-item > div > img {
     max-height: unset;
   }
+
+  #video-carousel .owl-item {
+    max-width: 100vw;
+  }
 }
 
-@media only screen and (max-width: 992px) {
-}
