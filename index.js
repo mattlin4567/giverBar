@@ -1,32 +1,31 @@
 function createCards(name, title) {
-  var img = './assets/activities/'+name+'/logo.png';
+  var img = './assets/activities/' + name + '/logo.png';
   var card = $('<img>').attr('src', img).attr('alt', title);
   return card;
 }
 
 function initPage() {
-  var news = NEWS.reverse();
+  var news = {};
+  NEWS.forEach((n) => {
+    var year = n['date'].substring(0, 4);
+    if (!news[year]) {
+      news[year] = [];
+    }
+    news[year].push(n);
+  });
   var list = $('#activity-list');
-  var newsNum = news.length;
-  var pageNum = Math.ceil(newsNum / 12);
-  for (var p = 0; p < pageNum; p++) {
-    var page = $('<div>').attr("id", 'page-'+p).appendTo(list);
+  Object.keys(news).sort().reverse().forEach((y) => {
+    $('<hr>').addClass('hr-text').attr("data-content", y).appendTo(list);
     var row = $('<div>').addClass('row form-group');
-    var limit = newsNum - ((p + 1) * 12) > 0 ? 12 : newsNum - (p * 12);
-    var count = 0;
-    while (count < limit) {
-      var index = p * 12 + count;
-      var col = $('<button>').addClass('span3 tiles').attr("data-activity", news[index].activities).appendTo(row);
-      col.append(createCards(news[index].activities, news[index].title));
-      var details = $('<div>').addClass('details').text(news[index].title).appendTo(col);
-      count++;
-    }
-    page.append(row);
-    if (p > 0) {
-      page.hide();
-    }
-  }
-  initPagination(pageNum);
+    var activities = news[y];
+    activities.forEach((activity) => {
+      var col = $('<button>').addClass('span3 tiles').attr("data-activity", activity.activities).appendTo(row);
+      col.append(createCards(activity.activities, activity.title));
+      $('<div>').addClass('details').text(activity.title).appendTo(col);
+    })
+    list.append(row);
+  });
+
   // bind click event
   $('button.tiles').click(navgation);
 }
@@ -91,7 +90,7 @@ function initPagination(pageNum) {
 
 function navgation() {
   var activity = $(this).attr('data-activity');
-  window.location = './content.html?id='+activity;
+  window.location = './content.html?id=' + activity;
 }
 
 var player = [];
@@ -99,7 +98,7 @@ function onYouTubeIframeAPIReady() {
   console.info("onYouTubeIframeAPIReady")
   if (md.mobile()) {
     player = new YT.Player('player', {
-      playerVars: { 
+      playerVars: {
         'origin': window.location.host
       },
       events: {
@@ -107,32 +106,32 @@ function onYouTubeIframeAPIReady() {
       },
     });
   } else {
-    for(var i=0; i<VIDEOS.length; i++) {
-      var id = 'player-'+i;
+    for (var i = 0; i < VIDEOS.length; i++) {
+      var id = 'player-' + i;
       console.log(id);
       player.push(new YT.Player(id, {
         videoId: VIDEOS[i],
-        playerVars: { 
+        playerVars: {
           'origin': window.location.host
         }
       }));
     }
     $('#video-carousel').owlCarousel({
       startPosition: 0,
-      autoWidth:true,
-      center:true,
+      autoWidth: true,
+      center: true,
       loop: true,
       margin: 10,
       dots: false,
       responsive: {
         0: {
           items: 1,
-          nav:false
+          nav: false
         },
         600: {
           items: 3,
-          navText:['<i class="fas fa-chevron-circle-left fa-2x"></i>','<i class="fas fa-chevron-circle-right fa-2x"></i>'],
-          nav:true
+          navText: ['<i class="fas fa-chevron-circle-left fa-2x"></i>', '<i class="fas fa-chevron-circle-right fa-2x"></i>'],
+          nav: true
         }
       },
     });
@@ -153,9 +152,9 @@ function onPlayerReady() {
 function initVideo() {
   console.info("initVideo")
   var carousel = $('#video-carousel');
-  for(var i=0; i<VIDEOS.length; i++) {
-    var vid = $('<div>').addClass('video').css({position:'relative',height:0,'padding-bottom':'56.28%'});
-    $('<div>').attr("id", 'player-'+i).appendTo(vid);
+  for (var i = 0; i < VIDEOS.length; i++) {
+    var vid = $('<div>').addClass('video').css({ position: 'relative', height: 0, 'padding-bottom': '56.28%' });
+    $('<div>').attr("id", 'player-' + i).appendTo(vid);
     carousel.append(vid);
   }
 }

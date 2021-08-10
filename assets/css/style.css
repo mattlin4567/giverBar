@@ -7,6 +7,39 @@ html {
   font-family: Helvetica, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Microsoft Yahei", sans-serif;
 }
 
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 2em;
+}
+
+.hr-text:before {
+  content: '';
+  background: linear-gradient(to right, transparent, black, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2.5px;
+  opacity: .8;
+}
+
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  background-color: #fcfcfa;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
 .activities {
   margin-top: 16px;
 }
