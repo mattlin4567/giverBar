@@ -108,7 +108,7 @@ function onYouTubeIframeAPIReady() {
 $(document).ready(function () {
   id = getId();
   $('.share-btn > img').attr("onerror", "this.src='./assets/activities/"+id+"/logo.png'").attr("src", "./assets/activities/"+id+"/social_logo.png");
-  $.getJSON('https://mattlin4567.github.io/giverBar/assets/activities/'+id+'/data.json', function (json) {
+  $.getJSON('./assets/activities/'+id+'/data.json', function (json) {
     data = json;
     var imageNum = json.images ? json.images : 3;
     initImagesCarousel(id, imageNum);
