@@ -19,7 +19,7 @@ html {
 
 .hr-text:before {
   content: '';
-  background: linear-gradient(to right, transparent, black, transparent);
+  background: black;
   position: absolute;
   left: 0;
   top: 50%;
@@ -184,7 +184,7 @@ html {
  	image-rendering: -webkit-optimize-contrast; 
  	image-rendering: optimize-contrast;     
  	-ms-interpolation-mode: nearest-neighbor;
-  width: 80%;
+  width: 60%;
 }
 
 .stage > img:hover {
