@@ -58,6 +58,11 @@ const NEWS = [
         'activities': '20210706',
         'date': '2021-07-06',
         'title': '大圈圈業師夥伴來開槓',
+    },
+    {
+        'activities': '20210811',
+        'date': '2021-08-11',
+        'title': '鳳儀穀倉讓我們Gather在一起',
     }
 ];
 
@@ -72,4 +77,5 @@ const VIDEOS = [
     'sSL8R_fTNls',
     'Y0I8iEeaPbg',
     'pC-XVQstK3o',
+    '1YTzD4b9czU'
 ]
