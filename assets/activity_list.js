@@ -63,6 +63,16 @@ const NEWS = [
         'activities': '20210811',
         'date': '2021-08-11',
         'title': '鳳儀穀倉讓我們Gather在一起',
+    },
+    {
+        'activities': '20210924',
+        'date': '2021-09-24',
+        'title': '來去萬華探索老台北的新風貌',
+    },
+    {
+        'activities': '20211112',
+        'date': '2021-11-12',
+        'title': '相揪來田尾 一起成為園藝植人',
     }
 ];
 
@@ -77,5 +87,7 @@ const VIDEOS = [
     'sSL8R_fTNls',
     'Y0I8iEeaPbg',
     'pC-XVQstK3o',
-    '1YTzD4b9czU'
+    '1YTzD4b9czU',
+    'hr0qakS7kOA',
+    '5wbTQS60zJA'
 ]

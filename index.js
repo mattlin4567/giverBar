@@ -108,7 +108,6 @@ function onYouTubeIframeAPIReady() {
   } else {
     for (var i = 0; i < VIDEOS.length; i++) {
       var id = 'player-' + i;
-      console.log(id);
       player.push(new YT.Player(id, {
         videoId: VIDEOS[i],
         playerVars: {
