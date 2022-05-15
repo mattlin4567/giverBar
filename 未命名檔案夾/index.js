@@ -19,7 +19,7 @@ function initPage() {
     var row = $('<div>').addClass('row form-group');
     var activities = news[y];
     activities.forEach((activity) => {
-      var col = $('<button>').addClass('tiles').attr("data-activity", activity.activities).appendTo(row);
+      var col = $('<button>').addClass('span3 tiles').attr("data-activity", activity.activities).appendTo(row);
       col.append(createCards(activity.activities, activity.title));
       $('<div>').addClass('details').text(activity.title).appendTo(col);
     })
@@ -115,6 +115,25 @@ function onYouTubeIframeAPIReady() {
         }
       }));
     }
+    $('#video-carousel').owlCarousel({
+      startPosition: 0,
+      autoWidth: true,
+      center: true,
+      loop: true,
+      margin: 10,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false
+        },
+        600: {
+          items: 3,
+          navText: ['<i class="fas fa-chevron-circle-left fa-2x"></i>', '<i class="fas fa-chevron-circle-right fa-2x"></i>'],
+          nav: true
+        }
+      },
+    });
   }
 }
 
@@ -129,36 +148,14 @@ function onPlayerReady() {
   });
 }
 
-function initTV() {
-  console.info("init TV")
-  var carousel = $('#tv-carousel');
+function initVideo() {
+  console.info("initVideo")
+  var carousel = $('#video-carousel');
   for (var i = 0; i < VIDEOS.length; i++) {
-    var img = 'https://i.ytimg.com/vi/' + VIDEOS[i] + '/maxresdefault.jpg';
-    var card = $('<div>').addClass('yt-thumbnail').attr("data-video", VIDEOS[i]);
-    $('<img>').attr('data-src', img).attr('alt', '圖片' + i).addClass('owl-lazy').appendTo(card);
-
-    // bind click event
-    card.click(openLightbox);
-    carousel.append(card);
+    var vid = $('<div>').addClass('video').css({ position: 'relative', height: 0, 'padding-bottom': '56.28%' });
+    $('<div>').attr("id", 'player-' + i).appendTo(vid);
+    carousel.append(vid);
   }
-  carousel.owlCarousel({
-    center: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    items: 1,
-    navText: ['<i class="fas fa-caret-left fa-2x"></i>', '<i class="fas fa-caret-right fa-2x"></i>'],
-    loop: true,
-    dots: false,
-    animateOut: 'fadeOut',
-    lazyLoad: true,
-    lazyLoadEager: 2
-  });
-}
-
-function openLightbox(id) {
-  var id = $(this).attr('data-video');
-  lity('//www.youtube.com/watch?v=' + id)
 }
 
 var md;
@@ -168,7 +165,7 @@ $(document).ready(function () {
     var banner = $('#banner');
     banner.height(Math.floor(banner.width() / 4.37));
   } else {
-    initTV();
+    initVideo();
   }
   initPage();
 });
