@@ -16,7 +16,7 @@ function initPage() {
   var list = $('#activity-list');
   Object.keys(news).sort().reverse().forEach((y) => {
     $('<hr>').addClass('hr-text').attr("data-content", y).appendTo(list);
-    var row = $('<div>').addClass('row form-group');
+    var row = $('<div>').addClass('list-row form-group');
     var activities = news[y];
     activities.forEach((activity) => {
       var col = $('<button>').addClass('tiles').attr("data-activity", activity.activities).appendTo(row);
