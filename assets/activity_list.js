@@ -73,21 +73,38 @@ const NEWS = [
         'activities': '20211112',
         'date': '2021-11-12',
         'title': '相揪來田尾 一起成為園藝植人',
+    },
+    {
+        'activities': '20220610',
+        'date': '2022-06-10',
+        'title': '華麗轉身在絕美中興新村打造創生聚落',
+    },
+    {
+        'activities': '20220914',
+        'date': '2022-09-14',
+        'title': '旅人書店為羅東開啟友善移居新篇章',
+    },
+    {
+        'activities': '20221005',
+        'date': '2022-10-05',
+        'title': '鳳儀穀倉串連在地青年 一起讓家鄉變更好',
+    },
+    {
+        'activities': '20221109',
+        'date': '2022-11-09',
+        'title': '金魚厝邊 在地職人的孵化基地',
+    },
+    {
+        'activities': '20221119',
+        'date': '2022-11-19',
+        'title': '認識新竹從《貢丸湯》開始',
     }
 ];
 
 const VIDEOS = [
-    'WW-tiGONub8',
-    'EtPivNDAiWY',
-    '19M02XgyOVE',
-    'dWc0TO2Mxic',
-    'YGAIvDyZJCA',
-    'ZjZCR0grlb8',
-    'n4_FCvYUmyQ',
-    'sSL8R_fTNls',
-    'Y0I8iEeaPbg',
-    'pC-XVQstK3o',
-    '1YTzD4b9czU',
-    'hr0qakS7kOA',
-    '5wbTQS60zJA'
+    'hqPH-MKiwvo',
+    'GuacJN2m_ws',
+    'GtvZQ9HGaL0',
+    '1yi5LaX9gak',
+    '7l4_QMTL8X4'
 ]
