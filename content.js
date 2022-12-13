@@ -97,6 +97,12 @@ function addSocialButton(url, title) {
   $('.line-it-button').attr("href", 'http://line.me/R/msg/text/?'+title+'%0D%0A'+document.URL);
 }
 
+function createVideoElement() {
+  var video = $('<div>').addClass('video');
+  $('<div>').attr('id', 'player').appendTo(video);
+  return video;
+}
+
 function onYouTubeIframeAPIReady() {
   if (data.youtube) {
     player = new YT.Player('player', {
@@ -111,7 +117,16 @@ $(document).ready(function () {
   $.getJSON('./assets/activities/'+id+'/data.json', function (json) {
     data = json;
     var imageNum = json.images ? json.images : 3;
-    initImagesCarousel(id, imageNum);
+    var position = null
+    if(data.images) {
+      initImagesCarousel(id, imageNum);
+      position = ".content";
+    } else {
+      $('#image-carousel').parent().hide()
+      position = ".title";
+    }
+    $(position).after(createVideoElement());
+    
     addSocialButton(json.web, json.title.main);
     initContent(json);
     initOtherActivityCarousel();
