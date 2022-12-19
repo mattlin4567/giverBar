@@ -133,7 +133,7 @@ function initTV() {
   console.info("init TV")
   var carousel = $('#tv-carousel');
   for (var i = 0; i < VIDEOS.length; i++) {
-    var img = 'https://i.ytimg.com/vi/' + VIDEOS[i] + '/maxresdefault.jpg';
+    var img = 'https://i.ytimg.com/vi/' + VIDEOS[i] + '/0.jpg';
     var card = $('<div>').addClass('yt-thumbnail').attr("data-video", VIDEOS[i]);
     $('<img>').attr('data-src', img).attr('alt', '圖片' + i).addClass('owl-lazy').appendTo(card);
 
