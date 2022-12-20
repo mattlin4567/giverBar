@@ -70,7 +70,7 @@ function initContent(d) {
   var body = $(".content-body");
   for (var i = 0; i < d.content.paragraph.length; i++) {
     var paragraph = $("<div>").addClass("paragraph").appendTo(body);
-    paragraph.text(d.content.paragraph[i]);
+    paragraph.html(d.content.paragraph[i]);
   }
 }
 

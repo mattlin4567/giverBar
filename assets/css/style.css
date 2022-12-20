@@ -367,7 +367,8 @@ button.tiles:hover .details {
 
 .yt-thumbnail>img {
   border-radius: 10px;
-  max-height: 230px;
+  max-height: 210px;
+  object-fit: cover;
 }
 
 .greeting {
